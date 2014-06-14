@@ -20,8 +20,9 @@
 %   b - filter coefficients
 %
 % Example:
+%   import firfilt.*;
 %   fs = 500; cutoff = 0.5; tbw = 1;
-%   m  = pop_firwsord('hamming', fs, tbw);
+%   m  = firwsord('hamming', fs, tbw);
 %   b  = firws(m, cutoff / (fs / 2), 'high', windows('hamming', m + 1)); 
 %
 % References:
@@ -53,6 +54,8 @@
 % Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 function [b a] = firws(m, f, t, w)
+
+    import firfilt.windows;
 
     a = 1;
 
